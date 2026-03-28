@@ -76,6 +76,9 @@ func buildRouter(cfg *config.AppConfig) *gin.Engine {
 		router.GET("/images.html", func(c *gin.Context) {
 			serveEmbedFile(c, "public/images.html")
 		})
+		router.GET("/tos.html", func(c *gin.Context) {
+			serveEmbedFile(c, "public/tos.html")
+		})
 		router.GET("/search.html", func(c *gin.Context) {
 			serveEmbedFile(c, "public/search.html")
 		})
@@ -90,6 +93,9 @@ func buildRouter(cfg *config.AppConfig) *gin.Engine {
 			c.Status(http.StatusNotFound)
 		})
 		router.GET("/images.html", func(c *gin.Context) {
+			c.Status(http.StatusNotFound)
+		})
+		router.GET("/tos.html", func(c *gin.Context) {
 			c.Status(http.StatusNotFound)
 		})
 		router.GET("/search.html", func(c *gin.Context) {

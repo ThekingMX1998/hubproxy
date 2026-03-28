@@ -212,7 +212,7 @@ func (i *IPRateLimiter) GetLimiter(ip string) (*rate.Limiter, bool) {
 func RateLimitMiddleware(limiter *IPRateLimiter) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		path := c.Request.URL.Path
-		if path == "/" || path == "/favicon.ico" || path == "/images.html" || path == "/search.html" ||
+		if path == "/" || path == "/favicon.ico" || path == "/images.html" || path == "/tos.html" || path == "/search.html" ||
 			strings.HasPrefix(path, "/public/") {
 			c.Next()
 			return
